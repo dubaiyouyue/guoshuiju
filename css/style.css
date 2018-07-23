@@ -1,0 +1,414 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*--------------------------------首页 开始-----------------------------------*/
+.index{width: 100%; position: relative;}
+.in_roof{width: 100%; height: 76px; background:url(../images/index_76.png) repeat-x;}
+.in_background{width: 100%; height: 572px; position:absolute; top:0px;z-index:-50; background: url(../images/in_back.png) repeat;}
+
+.in_middle{width: 1200px; margin: auto;}
+/*四个按钮 开始*/
+.in_mi_buttom{margin-top: 30px;}
+.in_mi_bu_li{display: inline-block; vertical-align: top;margin-right: 82px;position: relative;}
+.in_mi_bu_li a{background: url(../images/index_24.png) no-repeat center center;width: 214px; height: 54px; display: block;}
+.in_mi_bu_li_p{font-size: 16px; color: #fff; display: inline-block; vertical-align: top; margin-left: 39px;margin-top: 14px;}
+.in_mi_bu_li a img{display: inline-block; vertical-align: top;position: absolute;right: -30px;top:-20px;}
+/*四个按钮 结束*/
+
+/*首页标题 开始*/
+.in_title{margin-bottom: 26px;}
+.in_ti_img{width: 63px; height: 55px; display: inline-block; vertical-align: top;}
+.in_ti_word{display: inline-block; vertical-align: top;}
+.in_ti_wo_p{font-size: 20px; font-weight: bold;color: #d91918;margin-top: 5px;}
+.in_ti_wo_span{font-size: 18px; color: #b9b9b9; font-family:"宋体"}
+/*首页标题 结束*/
+
+/*从严治党 开始*/
+.in_party{margin-top: 60px;margin-bottom:80px;}
+.in_pa_content{}
+.in_pa_left{width: 704px; display: inline-block; vertical-align: top; background: #fff;position: relative;}
+.in_pa_le_img{width: 248px; height: 292px; display: inline-block; vertical-align: top;position: relative;margin-top: 20px; margin-left: 20px;}
+.in_pa_le_img img{width: 61px; height: 65px; position: absolute;bottom:-2px; right: 0px;}
+.in_pa_le_word{display: inline-block; vertical-align: top;width: 380px; margin-left: 20px;}
+.in_pa_wo_le_title{font-size: 16px; font-weight: bold; color: #191818;height:46px; padding-top: 20px; overflow: hidden; display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.4;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.in_pa_wo_le_deat{font-size: 14px; color: #AFACAC; padding: 10px 0px;}
+.in_pa_wo_le_span{font-size: 14px; color:#191818;height: 57px;margin-top: 20px;overflow: hidden; display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.4;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.in_pa_le_more{width: 74px; height: 29px; background: #cb252e; line-height: 29px; text-align: center; font-size: 14px; color: #fff;position: absolute; right:44px; bottom:55px;}
+
+
+.in_pa_right{width: 438px;display: inline-block; vertical-align: top;background: #fff; margin-left: 20px;}
+.in_pa_ri_each{margin-bottom: 20px; margin-top: 20px; margin-left: 20px;}
+.in_pa_ri_img{width: 86px; height: 86px;display: inline-block; vertical-align: top;}
+.in_pa_ri_word{display: inline-block; vertical-align: top;width:300px;margin-left: 15px; margin-top:10px;}
+.in_pa_ri_wo_title{color: #535353; font-size: 16px; font-weight: bold; overflow: hidden; display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.in_pa_ri_wo_span{font-size: 14px; color: #767676;padding-top:10px;display: inline-block;overflow: hidden; display: block;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.in_pa_ri_each:hover .in_pa_ri_wo_title{color: #cb252e;}
+.in_pa_ri_each:hover .in_pa_ri_wo_span{color: #cb252e;}
+/*从严治党 结束*/
+
+
+/* 首页税收资料开始 */
+
+.index_sszl{width:1200px;margin:0 auto; position: relative;}
+.index_sszl .sszl_list{margin-left:-5px;}
+.index_sszl .sszl_list li{display: inline-block;width:314px;margin-right: 36px;margin-left: 48px;}
+.on:hover{border-bottom: 1px dashed #d14047;}
+.index_sszl .sszl_list li p{font-family:"微软雅黑";font-size:14px;margin-top:21px; color:#464646;height:19px; padding: 10px 0px; overflow: hidden; display: block;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis}
+.index_sszl .sszl_bigimg{margin-top:76px;}
+.index_sszl .more{float:right;width:85%;font-family:"微软雅黑";font-size:12px;padding-bottom:9px;margin-top:5px;}
+.index_sszl .more p{float:right;color:#cb252e;position: absolute; top:33px;right:36px;}
+
+.ss_img{width: 314px; height: 147px;}
+.ss_line{position: relative; top:-44px;right: -252px;}
+.ss_li_x{width: 830px; height: 1px; background: #EFEFEF;margin-bottom: 10px;}
+
+/* 首页税收资料结束 */
+
+/* 首页政策法规开始 */
+.index_zcfg_bg{ }
+
+.index_zcfg{width:1200px;margin:0 auto;margin-top:53px;    padding-bottom:150px;}
+
+.index_zcfg .first{display: inline-block;vertical-align: top; margin-left: 30px;}
+.in_ne_j{width: 4px; height: 4px; background: #626161; display:inline-block; vertical-align: top; margin-top:10px;}
+.index_zcfg .news_title{margin-left:0px;margin-top:14px;margin-bottom:15px;font-family:"微软雅黑";font-size:16px;font-weight:bold;overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;color:#686b6c;}
+
+.index_zcfg .news_introu{margin-left:10px;width:385px;font-family:"微软雅黑";font-size:14px;padding-bottom: 20px; color:#696c6f;overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;}
+.jsfhs{ display: inline-block;vertical-align: top;margin-left: 72px;}
+.index_zcfg .second{width:519px;margin-right:84px;border-bottom: 1px dashed #777a7c;}
+
+.index_zcfg .second .news_title{font-family:"微软雅黑";font-size:14px;    font-weight:normal; color:#333233;width: 441px;display: inline-block; vertical-align: top; height: 19px;overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;}
+	 
+.index_zcfg .first:hover .news_title{color:#b01111;}
+.index_zcfg .first:hover .news_introu{color:#b01111;}
+
+.index_zcfg .second:hover .news_title {color:#b01111;font-weight: bold;}
+.in_ne_moer{width:70px; height:25px; line-height: 25px; background:#b01111; display: inline-block;vertical-align: top;font-size:14px; color: #fff; text-align: center;margin-top: 10px; display: none;}
+.second:hover .in_ne_moer{display:inline-block;}
+.fi_img{width: 464px; height: 202px;position: relative}
+.fi_img img{position: absolute;bottom:-2px;right: 0px;}
+.first{border: #E8E7E7 1px solid;position: relative;}
+.first a img{position: absolute; bottom: 30px; right: -20px;}
+	 /* 首页政策法规结束 */
+/*--------------------------------首页 结束-----------------------------------*/
+
+
+
+
+
+/*------------------------------从严治党 开始--------------------------------*/
+.party{width: 100%; background: url(../images/pa22222.png) repeat;position: relative;}
+.pa_middle{width: 1200px; margin: auto;padding-bottom:158px;}
+
+.pa_one{width: 1040px; margin: auto; margin-top:60px;}
+
+.pa_on_img{width: 1040px; height: 163px; margin: auto;}
+.pa_on_wo_img{width: 111px; height: 118px;}
+.pa_on_word{margin-top: 20px;position: relative; margin-bottom: 60px;}
+.pa_on_wo_img{display: inline-block;vertical-align: top;position: absolute;top:-58px;left: 40px;}
+.pa_on_d{width: 820px; margin-left:198px;display: inline-block;vertical-align: top;}
+.pa_on_title{font-size: 18px; font-weight: bold; color: #464646;height: 24px; display: block;overflow: hidden; display: block;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.pa_on_date{font-size: 14px; color: #848484; margin-top:5px;}
+.pa_on_span{font-size: 14px; color: #3F3F3F;margin-top: 15px;height:55px; display: block;overflow: hidden; display: block;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+
+
+.pa_list{width: 1040px; margin: auto;margin-top:50px;}
+.pa_li_li{padding: 10px 0px;border-bottom: 1px #E4E4E4 dashed; margin-top: 10px;}
+.pa_li_li a img{display: inline-block; vertical-align: top;margin-top:7px;}
+.pa_li_p{display: inline-block; vertical-align: top;width: 768px; margin-left: 10px; color: #4c4c4c;height:28px; overflow: hidden;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.pa_li_integral{display: inline-block; vertical-align: top;width: 100px; color: #979797}
+.pa_li_browse{display: inline-block; vertical-align: top;width: 138px; color: #979797}
+.pa_li_li:hover .pa_li_p{color: #c72a32; font-weight: bold;}
+.pa_back{width: 100%; height:288px; background: url(../images/pa_02.png) no-repeat center center;position: absolute; bottom: 60px;bottom: -1px;;}
+/*------------------------------从严治党 结束--------------------------------*/
+
+
+
+
+
+
+
+/*--------------------------------------法规政策 开始--------------------------------------*/
+.statute{width: 100%; background: url(../images/pa22222.png) repeat;position: relative;}
+.st_middle{width: 1200px; margin: auto;padding-bottom:158px;}
+/*二级导航 开始*/
+.st_nav{width: 191px; background: #c92931;padding: 10px 15px 80px 15px; box-sizing: border-box; margin-top: 40px;display: inline-block; vertical-align: top;position: relative;}
+.st_na_lisi{border-bottom:#930f0b 1px dashed;padding: 10px 0px;}
+.st_na_lisi a{font-size: 14px; color: #fafafa;display: inline-block; vertical-align: top; text-align: center;width: 150px;overflow: hidden; height: 19px;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.st_na_lisi img{display: inline-block; vertical-align: top; float: right;margin-top: 3px;display: none;}
+.st_na_lisi:hover img{display:inline-block;}
+.st_na_dq img{display:block;}
+/*二级导航 结束*/
+
+/*法规政策列表 开始*/
+.st_list{display: inline-block; vertical-align: top; margin-top: 40px;width: 898px;margin-left: 60px;}
+.st_li_title{background: #c92931;color: #fff; font-size: 18px; font-weight: bold; padding-left: 10px; box-sizing: border-box;line-height:30px; margin-bottom: 40px;}
+.st_li_title_span{color: #da6e72; font-family: "宋体"; margin-left: 10px;}
+.st_li_each{border-bottom:#930f0b 1px dashed;padding:15px 0px;}
+.st_li_each a{display: block;cursor:pointer}
+.st_li_ea_spot{width:4px; height: 4px; background: #A4A4A4; display: inline-block; vertical-align: top; margin-top:8px;border-radius: 10px;}
+.st_li_ea_title{width: 730px; display: inline-block; vertical-align: top; font-size: 14px; color: #696868;overflow: hidden; height: 19px;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.st_li_ea_browse{width:154px;display: inline-block; vertical-align: top;text-align: center; font-size: 14px; color: #B4B4B4}
+.st_li_each:hover .st_li_ea_title{font-weight: bolder; color:#c92931; }
+/*法规政策列表 结束*/
+/*--------------------------------------法规政策 结束--------------------------------------*/
+
+
+
+
+
+/*---------------------------------------------税收资料 开始-------------------------------------------*/
+.tax{width: 100%; background: url(../images/pa22222.png) repeat;position: relative;}
+.ta_middle{width: 1200px; margin: auto;padding-bottom:158px;}
+
+.ta_one{width: 1027px; margin: auto; font-size: 0; position: relative;z-index: 50; margin-bottom:120px;}
+.ta_on_img{width: 513px; height: 303px;display: inline-block; vertical-align: top;position: relative;z-index: 50}
+.ta_on_word{width: 513px; height: 303px; display: inline-block; vertical-align: top; background:#c72a32;padding-left: 30px;padding-right: 30px; box-sizing: border-box; position: relative;}
+.ta_on_title{font-size: 18px; color: #fff; margin-top:60px;font-weight: bold;height: 24px; display: block;overflow: hidden;
+    display: -webkit-box;
+    max-width: 400px;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis}
+.ta_on__line{width: 60px; height: 2px; background: #FFFFFF; margin-top:20px;}
+.ta_on_span{font-size: 14px; margin-top:20px; color: #fff; height:57px; display: block;overflow: hidden;
+    display: -webkit-box;
+    max-width: 400px;
+    line-height: 1.4;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis}
+.ta_on_more{width: 100px; height: 30px; border: 1px solid #fff; font-size: 14px; color: #fff; line-height: 30px; text-align: center;position: absolute; bottom: 30px; right:30px;}
+.ta_on_background{width: 1688px; height: 576px; background: url(../images/tax_12.png) no-repeat center center; background-size: cover;position: absolute; top: -150px;left: -500px;}
+
+
+
+.ta_ul{margin-top: 60px;width: 1027px; margin: auto}
+.ta_li_li{padding: 10px 0px;border-bottom: 1px #E4E4E4 dashed; margin-top: 10px;}
+.ta_li_li a img{display: inline-block; vertical-align: top;margin-top:7px;}
+.ta_li_p{display: inline-block; vertical-align: top;width:860px; margin-left: 10px; color: #4c4c4c;overflow: hidden; height:21px;
+    line-height: 1.4;
+    -webkit-line-clamp:1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.ta_li_integral{display: inline-block; vertical-align: top;width: 100px; color: #979797}
+.ta_li_browse{display: inline-block; vertical-align: top;width: 138px; color: #979797}
+.ta_li_li:hover .ta_li_p{color: #c72a32; font-weight: bold;}
+.ta_li_span{font-size:13px; color:#6B6B6B; margin-top: 10px;padding-left: 20px;width:980px;height: 36px; overflow: hidden;
+    display: -webkit-box;
+    line-height: 1.4;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; display:none;}
+.ta_li_li:hover .ta_li_span{display: block;transition:1s}
+
+.ta_back{width: 100%; height:193px; background:url(../images/tax_09.png) no-repeat center center;position: absolute; bottom:0px;
+    z-index:1;}
+/*---------------------------------------------税收资料 结束-------------------------------------------*/
+
+
+
+
+
+
+
+
+/*----------------------------------------学员中心 开始-------------------------------------------*/
+.menbers{width: 100%; background: url(../images/pa22222.png) repeat;position: relative;}
+.me_middle{width: 1200px; margin: auto;padding-bottom:158px;}
+
+/*会员信息 开始*/
+.men_information{width: 1096px; margin: auto; margin-top:30px;}
+.men_in_portrait{width: 218px; height: 179px; display: inline-block; vertical-align: top;position: relative;}
+.men_in_po_img{width: 166px; height: 166px; border-radius: 100px; background: red; margin-left:47px; margin-top: 1px;}
+.men_in_po_back{width: 215px; height: 173px; background: url(../images/men_04.png) no-repeat center center;position: absolute; top:0px; left: 0px;}
+
+.men_in_word{display: inline-block; vertical-align: top;width: 800px;margin-left:40px; margin-top:30px;}
+.men_in_wo_title{font-size: 16px; color: #fff; height: 38px; background: #d02f38;line-height: 38px; font-weight: bold; padding-left: 10px; box-sizing: border-box;}
+.men_in_wo_kkk{width: 100%; border-bottom:#828282 1px dashed; padding: 20px 0px;box-sizing: border-box;}
+.men_in_wo_span{margin-right: 20px;}
+.men_ljfhakjhdj{font-size:15px; font-weight:600; color: #4e4e4e;}
+.hjsdfbh{font-size:15px; color: #4e4e4e;}
+.men_in_wo_span:last-child{float: right}
+/*会员信息 结束*/
+
+/*会员二级导航 开始*/
+.men_nav{width: 1096px; border-bottom: 3px solid #d02f38; margin: auto; margin-top: 40px;}
+.men_na_each{background: url(../images/men_07.png) no-repeat center center; background-size: cover; display: inline-block; vertical-align: top; padding: 0px 20px; height: 30px;line-height: 30px; margin-bottom:2px;}
+.men_na_each a{color: #fff; font-weight: bold; font-size: 15px;}
+.men_dq{height: 32px;margin-bottom: 0px;}
+/*会员二级导航 结束*/
+
+/*列表 开始*/
+.men_ul{width: 1096px; margin: auto;}
+.men_li_li{padding: 10px 0px;border-bottom: 1px #E4E4E4 dashed; margin-top: 10px;}
+.men_li_li a img{display: inline-block; vertical-align: top;margin-top:7px;}
+.men_li_p{display: inline-block; vertical-align: top;width: 768px; margin-left: 10px; color: #4c4c4c;}
+.men_li_integral{display: inline-block; vertical-align: top;width: 100px; color: #979797}
+.men_li_browse{display: inline-block; vertical-align: top;width: 138px; color: #979797; float: right;}
+.men_li_li:hover .men_li_p{color: #c72a32; font-weight: bold;}
+/*列表 结束*/
+/*----------------------------------------学员中心 结束-------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------引导页 开始-------------------*/
+.guide{width: 100%; height: 100%; background: url(../images/guide_10.png) no-repeat top center; background-size:cover;position: fixed; top:0px;}
+.gu_middle{width: 1200px; margin: auto}
+.gu_logo{width: 178px; height: 181px; background:url(../images/guide_03.png) no-repeat center center;position: absolute; left: 50%; margin-left: -89px; top:10%}
+.gu_a{display: block; background: url(../images/guide_07.png) no-repeat center center;width: 356px; height: 43px;text-align: center;line-height: 43px; color:#2D2D2D; position: absolute; left: 50%;margin-left: -178px;margin-top:35%}
+/*--------------------------引导页 结束-------------------*/
+
+
+
+
+
+
+
+
+/*------------------------------------------在线测试 开始--------------------------------------------*/
+.test{width: 100%; background: url(../images/pa22222.png) repeat;position: relative;}
+.te_middle{width: 1200px; margin: auto;padding-bottom:158px;}
+
+.test_l{background: url(../images/test_03.png) no-repeat center center; background-size: cover;width: 725px; height: 412px;margin: auto; margin-top: 50px;position: relative;z-index: 88}
+.te_title{font-size: 16px; font-weight: bold; color: #373737;padding-top: 100px;}
+
+/* RADIO */
+
+.tag{width:600px;height:200px;margin:0 auto;}
+.regular-radio {display: none;}
+.jdjab{margin-top:12px;}
+.regular-radio + label {-webkit-appearance: none;background-color: #fff;border: 1px solid #aaa;padding: 9px;border-radius:50px;display: inline-block;position: relative;width: 0px;}
+.uia{font-size:15px; color: #4E4E4E;display: inline-block;vertical-align: top; margin-top:-1px;}
+
+.regular-radio:checked + label:after {content: ' ';width: 12px;height: 12px;border-radius: 50px;position: absolute;top: 3px;background: #d02f38;box-shadow:0px 0px 5px 0px  #d02f38;left: 3px;}
+
+.te_next{width: 129px; height: 34px; background: url(../images/test_06.png) no-repeat center center; background-size: 100%;position: absolute;bottom: 20px;right: 20px;}
+.te_next a{line-height: 34px;text-align: center;color: #fff;display:block;}
+.te_back{width: 100%; height:634px; background:url(../images/test_10.png) no-repeat center center;position: absolute; bottom:0px;
+    ;}
+.ta_fs{text-align: center;font-size: 20px;padding-top:174px;}
+.jabb{font-size: 30px; font-weight: bold; color:#d02f38;}
+/*------------------------------------------在线测试 结束--------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

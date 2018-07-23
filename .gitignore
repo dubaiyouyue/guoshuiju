@@ -21,3 +21,10 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+/upload/
+/Uploads/
+/images/
+/Cache/
+/布局/
+/tx/
+/config/config_db.php

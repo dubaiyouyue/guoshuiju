@@ -1,0 +1,283 @@
+
+ <!-------------------------------------------内容 开始--------------------------------------------->    
+    <div class="menbers">
+       <div class="in_roof"></div>
+       
+       <!---->
+       <div class="me_middle">
+       	<!--当前位置 开始-->
+       		<ul class="position">
+       			<li class="po_li"><a href="/index.php/Home/Index/home.html">首页</a><span class="po_li_span">></span></li>
+       			<li class="po_dq  po_li"><a href="/index.php/Home/{$getinfolamu.foldername}/index/cid/{$getinfolamu.id}.html">{$getinfolamu.name}</a><span class="po_li_span">></span></li>
+       			<img src="/images/pa_09.png"/>
+       		</ul>
+       		<img class="po_line" src="/images/position_line_03.png"/>
+       	<!--当前位置 结束-->
+       	
+       	<!--title 开始-->
+       	<div class="inside">
+       		<img class="ins_img" src="/images/pa_13.png"/>
+       		<div class="ins_word">
+       			<p class="ins_wo_p">{$lan.name}</p>
+       			<div class="ins_wo_line"></div>
+       		</div>
+       	</div>
+       	<!--title 结束-->
+       	
+           <!--会员信息 开始-->
+           <div class="men_information">
+               <div class="men_in_portrait">
+                   <div class="men_in_po_img" onclick="$('.upload').toggle();" style="background: url({$user_tx}?<?php echo time();?>) no-repeat center center; background-size: cover;    cursor: pointer;
+    z-index: 999;
+    position: relative;"></div>
+                   <div class="men_in_po_back"></div>
+               </div>
+               <div class="men_in_word">
+                   <p class="men_in_wo_title">个人信息</p>
+                   <div class="men_in_wo_kkk">
+                       <span class="men_in_wo_span"><span class="men_ljfhakjhdj">姓名：</span><span class="hjsdfbh">{$new_users_list.xm}</span></span>
+                       <span class="men_in_wo_span"><span class="men_ljfhakjhdj">部门：</span><span class="hjsdfbh">{$new_users_list.bm}</span></span>
+                       <span class="men_in_wo_span"><span class="men_ljfhakjhdj">电话：</span><span class="hjsdfbh">{$new_users_list.tel}</span></span>
+                       <span class="men_in_wo_span"><span class="men_ljfhakjhdj">积分：</span><span class="hjsdfbh" style="font-weight:700;color:#d02f38;">{$new_users_list.jifen}</span></span>
+                   </div>
+               </div>
+           </div>
+           <!--会员信息 结束-->
+           
+           <!--二级导航 开始-->
+           <div class="men_nav">
+               <div class=" men_na_each">
+                   <a href="/index.php/Home/Members/index/cid/478.html">积分记录</a>
+               </div>
+               <div class="men_na_each">
+                   <a href="/index.php/Home/Members/index/cid/478/mp/texc.html">测试记录</a>
+               </div>
+               
+               <div class="men_na_each men_dq">
+                   <a href="/index.php/Home/Members/index/cid/478/mp/epass.html">修改密码</a>
+               </div>               <div class="men_na_each ">
+                   <a href="/index.php/Home/Index/out.html">退出</a>
+               </div>
+           </div>
+           <!--二级导航 结束-->
+           <!----------------------积分记录列表 开始----------------->
+           <ul class="men_ul"><?php
+			if(empty($loidlist)) echo '<p style="padding: 18px;color: #666;">暂无数据</p>';
+		   ?>
+               <foreach name="loidlist" item="r" key="k" ><li class="men_li_li">
+                    <a href="/index.php/Home/Newsshow/index/cid/{$cid}/c/{$r.class1}/id/{$r.id}.html">
+                        <img src="/images/pas_03.png"/>
+                        <p class="men_li_p">{$r.title}</p>
+                        <span class="men_li_integral">积分：{$r.exhibitionnum}</span>
+                        <span class="men_li_browse">浏览次数：{$r.hits}</span>
+                    </a>
+       		    </li></foreach>
+               
+               <div class="page" id="paga"></div>
+           </ul>
+           <!----------------------积分记录列表 结束----------------->
+         
+           
+       	
+       	
+       </div>
+       <!---->
+       
+        <div class="ta_back" style="background: url({$config_info.gz_xxyyzxddbbttt}) no-repeat center center;"></div>
+    </div>
+    
+ <!-------------------------------------------内容 结束--------------------------------------------->   
+    
+
+<script>
+function rezc(){
+	var opass=$('#opass').val();
+	var npass=$('#npass').val();
+	
+	if(!opass){
+		alert('请填写旧密码');
+		document.getElementById('opass').focus();
+		return false;
+	}
+	if(!npass){
+		alert('请填写新密码');
+		document.getElementById('npass').focus();
+		return false;
+	}
+	
+			$('.log_buttom').removeAttr('onclick');
+			$('.log_buttom').text('正在修改..');
+			$.ajax({
+				type: "POST",
+				url:'/index.php/Home/Members/xepass.html',
+				data:$('#myformre').serialize(),
+				error: function(request) {
+					alert('服务器繁忙');
+					location.reload();
+					return false;
+				},
+				success: function(data) {
+					if(data=='1'){
+						alert('旧密码错误');
+						location.reload();
+						return false;
+					}else if(data=='addok'){
+						alert('修改密码成功，请重新登录');
+						location.reload();
+						return false;
+						
+					}else{
+						alert('修改失败');
+						location.reload();
+						return false;
+					}
+					
+				}
+			});
+	
+	
+}
+</script>
+	
+	
+	
+	
+<form action="" style="display:none;" method="POST" enctype="multipart/form-data" id="myformup">
+<input type="file" name="file" id="path" style="display:none;" onchange="uptx();" /> 
+</form>
+	
+<!-------------------上传头像 开始--------------------->
+           <style>
+        .upload{position:fixed;top:0;left:0;z-index:999999;width:100%;height:100%;background:url(/images/1111111_03.png) repeat;display:none;}
+        .up_box{position:absolute;top:50%;left:50%;margin-top:-180px;margin-left:-295px;width:580px;height:360px;border-radius:10px;background:url(/images/log_03.png) no-repeat center center;background-size:cover;}
+        .up_title{margin-top:30px;color:#CB3003;text-align:center;font-weight:700;font-size:18px;}
+        .up_in_portrait{position:relative;top:50%;left:50%;display:inline-block;margin-top:20px;margin-left:-129px;width:218px;height:179px;vertical-align:top;}
+        .up_in_po_img{margin-top:1px;margin-left:47px;width:166px;height:166px;border-radius:100px;background:red;}
+        .up_in_po_back{position:absolute;top:0;left:0;width:215px;height:173px;background:url(/images/men_04.png) no-repeat center center;}
+        .up_buttom{margin:auto;margin-top:20px;width:346px;height:35px;background:#cb3003;color:#fff;text-align:center;line-height:35px;cursor:pointer;}
+        .me_nav_in_por_upload_button{position:absolute;top:10px;right:10px;width:48px;height:48px;border:none;background:0 0;cursor:pointer;}.men_li_integral{float:right;}/*会员中心浏览次数*/.up_in_portrait{position:fixed;margin-top:-86px;}/*会员头像*/
+.up_buttom{margin-top: 240px;}
+    </style>
+    
+     
+    <div class="upload">
+        <div class="up_box">
+            <button class="me_nav_in_por_upload_button" onclick="$('.upload').toggle();"><img src="/images/sign_in_r1_c3.png"/></button>
+            <p class="up_title">上传头像</p>
+            <div class="up_in_portrait">
+                   <div class="up_in_po_img" style="background: url({$user_tx}?<?php echo time();?>) no-repeat center center; background-size: cover;"></div>
+                   <div class="up_in_po_back"></div>
+               </div>
+            
+            <div class="up_buttom" onclick="path.click();" >选择图片上传</div>
+        </div>
+    </div>
+    <!-------------------上传头像 结束--------------------->	
+ <script>
+	function uptx(){
+			$('.up_buttom').removeAttr('onclick');
+			$('.up_buttom').text('正在上传....');
+			var formData = new FormData($('#myformup')[0]);
+			$.ajax({
+				type: "POST",
+				url:'/index.php/Members/Uptx/index',
+				//data:$('#myformup').serialize(),
+				
+				cache: false,
+				data: new FormData($('#myformup')[0]),
+				processData: false,
+				contentType: false,
+				
+				error: function(request) {
+					alert('服务器繁忙');
+					location.reload();
+					return false;
+				
+				
+					//alert("提交失败");
+				},
+				success: function(data) {
+					if(data=='upok'){
+						alert('上传修改头像成功');
+						location.reload();
+						return false;
+					}else{
+						alert('上传失败');
+						location.reload();
+						return false;
+					
+					}
+					
+				}
+			});
+	}
+	</script>
+	
+	
+	
+	
+       	<!--修改密码 开始-->
+    <style>
+        .log_register{width:100%; height: 100%;position:fixed;top: 0px;left: 0px; background:url(/images/1111111_03.png) repeat; z-index: 999999}
+        .lo_box{width: 580px; height: 360px; background: url(/images/log_03.png) no-repeat center center;background-size: cover;position: absolute;left: 50%; margin-left: -295px;top: 50%; margin-top: -180px;border-radius:10px;}
+        .lo_bo_line{width: 100%; height: 5px;background: #d12932;}
+        .lo_title{width: 346px;margin: auto;margin-top: 20px; text-align: center;border-bottom: 1px solid #fff;margin-bottom:33px;}
+        .log_title{display: inline-block; margin:0px 20px; font-size:20px; padding: 10px 5px; color: #cb3003;cursor: pointer;}
+        .log_dq{border-bottom: 3px solid #cb3003;}
+        .log_input{width: 346px; margin: auto; margin-top:10px;border:#cb3003 1px solid; height:30px;background: #fff;}
+        .log_in_nema{line-height:30px; margin-left: 10px; font-size: 14px;}
+        .log_input input{width:250px;height:25px}
+        .log_buttom{width:346px; height: 35px; background:#cb3003;margin: auto; margin-top: 20px;text-align: center; line-height: 35px; color: #fff;cursor: pointer;}
+        .jjsdfj{float: right; margin-top:50px;margin-right:120px;color: #B4B4B4; font-size: 16px;}
+        .log_input select{width:280px;border: none; color: #7C7A7A;outline:none !important;}.me_nav_in_por_upload_button{position:absolute;top:10px;right:10px;width:48px;height:48px;border:none;background:0 0;cursor:pointer;}.men_in_po_back{z-index: 999;}
+    </style>
+    
+    
+    <div class="log_register">
+        <div class="lo_box">
+		
+<button class="me_nav_in_por_upload_button" onclick="location.href ='/index.php/Home/Members/index/cid/478.html';$('.log_register').toggle();"><img src="/images/sign_in_r1_c3.png"/></button>
+		
+		
+            <div class="lo_bo_line"></div>
+            
+            <div class="lo_title">
+                <div class="log_title">修改密码</div>
+            </div>
+            
+            <form id="myformre">
+
+                <div class="log_input">
+                    <span class="log_in_nema">旧密码：</span>
+                    <input type="password" name="opass" id="opass" placeholder=""/>
+                </div>
+                <div class="log_input">
+                    <span class="log_in_nema">新密码：</span>
+                    <input type="text" name="npass" id="npass" placeholder=""/>
+                </div>
+            </form>
+            
+            <div class="log_buttom" onclick="rezc();">确定</div>
+        </div>
+    </div>
+    <!--修改密码 结束-->
+	
+<script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paga',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$lan.foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});
+
+
+
+</script>

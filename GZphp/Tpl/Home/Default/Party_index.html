@@ -1,0 +1,115 @@
+
+    
+ <!-------------------------------------------内容 开始--------------------------------------------->    
+    <div class="party">
+       <div class="in_roof"></div>
+       
+       <!---->
+       <div class="pa_middle">
+       	<!--当前位置 开始-->
+       		<ul class="position">
+       			<li class="po_li"><a href="/index.php/Home/Index/home.html">首页</a><span class="po_li_span">></span></li>
+       			<li class="po_dq  po_li"><a href="/index.php/Home/{$getinfolamu.foldername}/index/cid/{$getinfolamu.id}.html">{$getinfolamu.name}</a><span class="po_li_span">></span></li>
+       			<img src="/images/pa_09.png"/>
+       		</ul>
+       		<img class="po_line" src="/images/position_line_03.png"/>
+       	<!--当前位置 结束-->
+       	
+       	<!--title 开始-->
+       	<div class="inside">
+       		<img class="ins_img" src="/images/pa_13.png"/>
+       		<div class="ins_word">
+       			<p class="ins_wo_p">{$lan.name}</p>
+       			<div class="ins_wo_line"></div>
+       		</div>
+       	</div>
+       	<!--title 结束-->
+       	<foreach name="list" item="r" key="k" >
+		<?php
+			
+			if(!$k){
+			
+			$nnnttimm=explode(' ',$r['updatetime']);
+		
+		?>
+		
+       	<!--第一段新闻 开始-->
+       	<div class="pa_one">
+       		<a href="/index.php/Home/Newsshow/index/cid/{$cid}/c/471/id/{$r.id}.html">
+				<div class="pa_on_img" style="background: url({$config_info.gz_ewmdh}) no-repeat center center; background-size: cover;"></div>
+				<div class="pa_on_word">
+					<img class="pa_on_wo_img" src="{$config_info.gz_ewmdhttt}"/>
+					<div class="pa_on_d">
+						<p class="pa_on_title">{$r.title}</p>
+						<p class="pa_on_date">{$nnnttimm.0}</p>
+						<span class="pa_on_span">{$r.description}</span>
+					</div>
+				</div>
+      		</a>
+       	</div>
+		
+		<?php
+		
+		}else{
+			if($k==1){
+			
+		?>
+		
+       	<!--第一段新闻 结束-->
+       	
+       	<img src="/images/pa11111.png"/>
+       	
+       	<!--新闻列表 开始-->
+       	<ul class="pa_list">
+		
+		<?php }?>
+       		<li class="pa_li_li">
+       			<a href="/index.php/Home/Newsshow/index/cid/{$cid}/c/471/id/{$r.id}.html">
+       				<img src="/images/pas_03.png"/>
+       				<p class="pa_li_p">{$r.title}</p>
+       				<span class="pa_li_integral">积分：{$config_info.gz_foottelqq}</span>
+       				<span class="pa_li_browse">浏览次数：{$r.hits}</span>
+       			</a>
+       		</li>
+       		
+       		<?php }?>
+			</foreach>
+			
+			
+       		<!--页码 开始-->
+       	<div class="page" id="paga"></div>
+       	<!--页码 结束-->
+       		
+       	<?php if(count($list)>1) echo '</ul>';?>
+       	<!--新闻列表 结束-->
+       	
+       	
+       	
+       </div>
+       <!---->
+       
+        <div class="pa_back" style="background: url({$config_info.gz_ewmdhddbbttt}) no-repeat center center;"></div>
+    </div>
+    
+ <!-------------------------------------------内容 结束--------------------------------------------->   
+    
+    
+<script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paga',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$lan.foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});
+
+
+
+</script>

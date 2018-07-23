@@ -1,0 +1,133 @@
+
+    
+    <!--注册 开始-->
+    <style>html,body{height:100%;}.bottom{position: absolute;
+    bottom: 0px;
+    left: 0px;}
+        .log_register{width:100%; height: 100%;position:fixed;top: 0px;left: 0px; background:url(/images/1111111_03.png) repeat; z-index: 999999}
+        .lo_box{width: 580px; height: 360px; background: url(/images/log_03.png) no-repeat center center;background-size: cover;position: absolute;left: 50%; margin-left: -295px;top: 50%; margin-top: -180px;border-radius:10px;}
+        .lo_bo_line{width: 100%; height: 5px;background: #d12932;}
+        .lo_title{width: 346px;margin: auto;margin-top: 20px; text-align: center;border-bottom: 1px solid #fff;margin-bottom:33px;}
+        .log_title{display: inline-block; margin:0px 20px; font-size:20px; padding: 10px 5px; color: #cb3003;cursor: pointer;}
+        .log_dq{border-bottom: 3px solid #cb3003;}
+        .log_input{width: 346px; margin: auto; margin-top:10px;border:#cb3003 1px solid; height:30px;background: #fff;}
+        .log_in_nema{line-height:30px; margin-left: 10px; font-size: 14px;}
+        .log_input input{width:250px;height:25px}
+        .log_buttom{width:346px; height: 35px; background:#cb3003;margin: auto; margin-top: 20px;text-align: center; line-height: 35px; color: #fff;cursor: pointer;}
+        .jjsdfj{float: right; margin-top:50px;margin-right:120px;color: #B4B4B4; font-size: 16px;}
+        .log_input select{width:280px;border: none; color: #7C7A7A;outline:none !important;}
+    </style>
+    
+    
+    <div class="log_register">
+        <div class="lo_box">
+            <div class="lo_bo_line"></div>
+            
+            <div class="lo_title">
+                <a href="/index.php/Home/Index/login.html"><div class="log_title">登录</div></a>
+                <div class="log_dq log_title">注册</div>
+            </div>
+            
+            <form id="myformre">
+                <div class="log_input">
+                    <span class="log_in_nema">姓名：</span>
+                    <input type="text" name="xm" id="xm" placeholder=""/>
+                </div>
+                <div class="log_input">
+                    <span class="log_in_nema">电话：</span>
+                    <input type="text" name="tel" id="tel" placeholder=""/>
+                </div>
+                <div class="log_input">
+                    <span class="log_in_nema">部门：</span>
+                   <select name="bm" id="bm">
+						<option value="">请选择</option>
+						<?php
+							$hhyy=explode("\r\n",$config_info['gz_headeryjhhyy']);
+							foreach($hhyy as $hk=>$hv){
+								echo '<option value="'.$hv.'">'.$hv.'</option>';
+							}
+						?>
+                    </select>
+                </div>
+                <div class="log_input">
+                    <span class="log_in_nema">密码：</span>
+                    <input type="text" name="mm" id="mm" placeholder=""/>
+                </div>
+            </form>
+            
+            <div class="log_buttom" onclick="rezc();">确定</div>
+        </div>
+    </div>
+    <!--注册 结束-->
+	
+	
+<script>
+function rezc(){
+	var xm=$('#xm').val();
+	var tel=$('#tel').val();
+	var bm=$('#bm').val();
+	var mm=$('#mm').val();
+	
+	if(!xm){
+		alert('请填写姓名');
+		document.getElementById('xm').focus();
+		return false;
+	}
+	if(!tel || (tel.length!=7 && tel.length!=11) || isNaN(tel)){
+		alert('请正确填写手机号');
+		document.getElementById('tel').focus();
+		return false;
+	}
+	
+	if(!bm){
+		alert('请选择部门');
+		//document.getElementById('bm').focus();
+		return false;
+	}
+	if(!mm){
+		alert('请填写密码');
+		document.getElementById('mm').focus();
+		return false;
+	}
+	
+			$('.log_buttom').removeAttr('onclick');
+			$('.log_buttom').text('正在注册..');
+			$.ajax({
+				type: "POST",
+				url:'/index.php/Home/Usermember/re.html',
+				data:$('#myformre').serialize(),
+				error: function(request) {
+					alert('服务器繁忙');
+					location.reload();
+					return false;
+				},
+				success: function(data) {
+					if(data=='1'){
+						alert('信息填写不完整');
+						location.reload();
+						return false;
+					}else if(data=='addok'){
+						//alert('注册成功');
+						<?php
+							if(!$config_info['gz_fozzyhldianhua2']) echo 'alert(\'注册成功，请等待管理员审核。\');';
+						?>
+						location.href = '/index.php/Home/Members/index/cid/478.html';
+						return false;
+						
+					}else if(data=='sjh'){
+						alert('手机号已经注册');
+						location.reload();
+						return false;
+						
+					}else{
+						alert('提交失败');
+						location.reload();
+						return false;
+					}
+					
+				}
+			});
+	
+	
+}
+</script>

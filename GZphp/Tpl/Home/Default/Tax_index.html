@@ -1,0 +1,113 @@
+
+ <!-------------------------------------------内容 开始--------------------------------------------->    
+    <div class="tax">
+       <div class="in_roof"></div>
+       
+       <!---->
+       <div class="ta_middle">
+       	<!--当前位置 开始-->
+       		<ul class="position">
+       			<li class="po_li"><a href="/index.php/Home/Index/home.html">首页</a><span class="po_li_span">></span></li>
+       			<li class="po_dq  po_li"><a href="/index.php/Home/{$getinfolamu.foldername}/index/cid/{$getinfolamu.id}.html">{$getinfolamu.name}</a><span class="po_li_span">></span></li>
+       			<img src="/images/pa_09.png"/>
+       		</ul>
+       		<img class="po_line" src="/images/position_line_03.png"/>
+       	<!--当前位置 结束-->
+       	
+       	<!--title 开始-->
+       	<div class="inside">
+       		<img class="ins_img" src="/images/pa_13.png"/>
+       		<div class="ins_word">
+       			<p class="ins_wo_p">{$lan.name}</p>
+       			<div class="ins_wo_line"></div>
+       		</div>
+       	</div>
+       	<!--title 结束-->
+       	       	<foreach name="list" item="r" key="k" >
+		<?php
+			
+			if(!$k){
+			
+			$nnnttimm=explode(' ',$r['updatetime']);
+		
+		?>
+       	    <!--第一条 开始-->
+           <div class="ta_one">
+               <div class="ta_on_background"></div>
+               <a href="/index.php/Home/Newsshow/index/cid/{$cid}/c/477/id/{$r.id}.html">
+                   <div class="ta_on_img" style="background: url({$r.imgurl}) no-repeat center center; background-size: cover;"></div>
+                   <div class="ta_on_word">
+                       <p class="ta_on_title">{$r.title}</p>
+                       <div class="ta_on__line"></div>
+                       <span class="ta_on_span">{$r.description}</span>
+                        <div class="ta_on_more">查看更多</div>
+                   </div>
+                </a> 
+               
+           </div>
+       	    <!--第一条 结束-->
+           		<?php
+		
+		}else{
+			if($k==1){
+			
+		?>
+		
+       	<ul class="ta_ul">
+		
+		<?php }?>
+		
+           <!--列表 开始-->
+           
+               <li class="ta_li_li">
+                    <a href="/index.php/Home/Newsshow/index/cid/{$cid}/c/477/id/{$r.id}.html">
+                        <div class="ta_kkkk">
+                            <img src="/images/pas_03.png"/>
+                            <p class="ta_li_p">{$r.title}</p>
+                            <span class="ta_li_browse">浏览次数：{$r.hits}</span>
+                        </div>
+                        <span class="ta_li_span">{$r.description}</span>
+                    </a>
+                </li>
+             <?php }?>
+			</foreach>
+            <?php if(count($list)>1) echo '</ul>';?>
+           <!--列表 结束-->
+               
+               <!--页码 开始-->
+                <div class="page" id="paga" style="margin-left:80px;"></div>
+       	    <!--页码 结束-->
+           
+       	
+       	
+       	
+       	
+       		
+       	
+       </div>
+       <!---->
+       
+        <div class="ta_back"></div>
+    </div>
+    
+ <!-------------------------------------------内容 结束--------------------------------------------->   
+    
+<script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paga',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$lan.foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});
+
+
+
+</script>

@@ -1,0 +1,78 @@
+
+ <!-------------------------------------------内容 开始--------------------------------------------->    
+    <div class="test">
+       <div class="in_roof"></div>
+       
+       <!---->
+       <div class="te_middle">
+       	<!--当前位置 开始-->
+       		<ul class="position">
+       			<li class="po_li"><a href="/index.php/Home/Index/home.html">首页</a><span class="po_li_span">></span></li>
+       			<li class="po_dq  po_li"><a href="/index.php/Home/{$getinfolamu.foldername}/index/cid/{$getinfolamu.id}.html">{$getinfolamu.name}</a><span class="po_li_span">></span></li>
+       			<img src="/images/pa_09.png"/>
+       		</ul>
+       		<img class="po_line" src="/images/position_line_03.png"/>
+       	<!--当前位置 结束-->
+       	
+       	<!--title 开始-->
+       	<div class="inside">
+       		<img class="ins_img" src="/images/pa_13.png"/>
+       		<div class="ins_word">
+       			<p class="ins_wo_p">{$lan.name}</p>
+       			<div class="ins_wo_line"></div>
+       		</div>
+       	</div>
+       	<!--title 结束-->
+       	
+       	    
+           
+       	<div class="test_l">
+           <div class="tag" style="display: none">
+                <h3 class="te_title">{$gtextlist.title}</h3>
+                <div class="button-holder">
+				
+						<?php
+							$hhyy=explode("\r\n",$gtextlist['dezxcsption']);
+							//$oka=$hhyy['0'];
+							shuffle($hhyy);
+							foreach($hhyy as $hk=>$hv){
+								echo '<div class="jdjab"><input type="radio" id="radio-1-'.$hk.'" name="cctt" class="regular-radio" value="';
+								echo md5($hv);
+								echo '"><label for="radio-1-'.$hk.'"></label> <span class="uia">'.$hv.'</span></div>';
+							}
+						?>
+				
+				
+				
+                    
+                   
+                </div>
+               <div class="te_next"><a href="javascript:;" onclick="getcc();">下一题</a></div>
+	        </div>
+            
+            <div class="ta_fs">测试分数：<span class="jabb">{$cj}分</span></div>
+        </div>
+       	
+       	
+       	
+       		
+       	
+       </div>
+       <!---->
+       
+        <div class="te_back" style="background: url({$config_info.gz_zxcesdtup}) no-repeat center center;"></div>
+    </div>
+    
+ <!-------------------------------------------内容 结束--------------------------------------------->
+ 
+<script>
+function getcc(){
+	var cctt=$('input[name="cctt"]:checked').val();
+	if(!cctt){
+		alert('请选择答案');
+		return false;
+	}
+	location.href = '/index.php/Home/Examination/index/cid/479/tid/{$tid}/ans/'+cctt;
+}
+</script>
+ 

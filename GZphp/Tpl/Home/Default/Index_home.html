@@ -1,0 +1,406 @@
+{__NOLAYOUT__}<!DOCTYPE html>
+<html>
+<head>
+<title>{$seo_title}</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="{$seo_title}">
+<meta name="description" content="{$seo_title}">
+    <link rel="stylesheet" href="/css/public.css"><!--公共样式CSS-->
+    <link rel="stylesheet" href="/css/style.css"><!--页面样式CSS-->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+
+     
+<script type="text/javascript" src="/js/js.js"></script>
+    
+<link rel="stylesheet" href="/css/idangerous.swiper.css"><!--bannerCSS-->
+   
+    
+</head>
+
+<body>
+    <!--------------------------------------头部 开始--------------------------------->
+    <div class="top">
+        <div class="top_line"></div>
+        <div class="top_middle">
+            <div class="top_logo"><a href="/"><img src="{$config_info.gz_logo}"/></a></div>
+            <ul class="top_nav">
+                <li class="top_dq top_li"><a href="/index.php/Home/Index/home.html">首  页</a></li>
+               <foreach name="new_column_list_top" item="r" key="k" >
+               <li class="top_li <?php
+        if($foldername==$r['foldername']) echo ' top_dq ';
+
+      ?>"><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html"">{$r.name}</a></li>
+			    </foreach>
+            </ul>
+        </div>
+    </div>
+    
+    <!--------------------------------------头部 结束--------------------------------->
+    
+    
+    
+    
+    <!-----banner 开始------>
+
+
+ <style>
+.index_sszl .sszl_list li p{height:12px;}/*首页税收资料*/
+
+.index_zcfg .news_introu{height:20px;margin-bottom:20px;}/*首页法规政策*/
+.index_zcfg .news_title{box-sizing:border-box;padding:0px 10px;}
+.in_ne_j{margin-right:10px;}
+
+
+.device {width: 100%;height: 100%;background: #111; position: relative;}
+	 /*------------------左右按钮-----------------*/
+	 .buttom{width:100%; margin: auto; position:absolute; top:51%; margin-top:-22.5px; z-index: 999}
+/*.device .arrow-left {background:#cb3003;position: absolute;left:60px; width:70px; height: 45px; z-index: 999}
+.device .arrow-right {background:#fff;position: absolute; right:60px;width: 70px; height:45px; z-index: 999}*/
+	 
+	 
+.swiper-container {width: 100%;height: 100%;}
+.content-slide {padding: 20px;color: #fff;}
+.title {font-size: 25px;margin-bottom: 10px;}
+.pagination {position: absolute;z-index: 20;bottom:17px;width: 100%;text-align: center;}
+	 
+	 /*------------轮播点---------*/
+.swiper-pagination-switch {display: inline-block;width:8px;height: 8px; border-radius: 8px;background-color:#cb3003;margin: 0 5px;opacity: 0.8;cursor: pointer;display: block;margin-left: 18px;display: inline-block;border-radius:25px;-moz-border-radius:25px;}
+.swiper-active-switch {background:transparent;border: 1px solid #cb3003;opacity: 1;width:10px;height:10px;display: block;display: inline-block;border-radius:25px;-moz-border-radius:25px;margin-bottom:-1px;}
+.bj>.in_news>.neih>.xinw>a>.meige>.ner>p{height:38px;}
+
+
+.swiper-wrapper img{display:block;}
+
+  </style>
+
+<div class="device">
+   <div class=" buttom">
+    <a class="arrow-left"></a> 
+    <a class="arrow-right"></a>
+    </div>
+    <div class="swiper-container">
+     
+      <div class="swiper-wrapper">
+        <foreach name="blist" item="r" key="k" >
+			 
+            	 <div class="swiper-slide" ><img src="{$r.img_path}" style="width: 100%; "></div>
+				
+				</foreach>
+	  </div>
+   
+    </div>
+    
+    <div class="pagination"></div>
+</div>
+
+
+<script src="/js/idangerous.swiper.min.js"></script>
+  <script>
+  $(document).ready(function(){
+		var mySwiper = new Swiper('.swiper-container',{
+		autoplay : 5000,//可选选项，自动滑动
+		loop : true,//可选选项，开启循环
+		calculateHeight : true,
+		pagination : '.pagination',
+		paginationClickable :true,
+		roundLengths : true,slidesPerView : 1,autoResize : true,
+		resizeReInit : true,
+		/*
+prevButton:'.arrow-left',
+nextButton:'.arrow-right',*/
+		
+	
+		})
+	$('#sdafasdfdsimgmmm').hide();
+    $(".swiper-slide img").each(function(){
+    $(this).show();
+  });
+  
+$('.arrow-left').click(function(){
+mySwiper.swipePrev(); 
+})
+  $('.arrow-right').click(function(){
+mySwiper.swipeNext(); 
+})
+  
+});
+ 
+</script>
+    
+
+	
+<!-----banner 结束------>
+    
+ <!-------------------------------------------内容 开始--------------------------------------------->
+    <div class="index">
+        <div class="in_roof"></div>
+        <div class="in_background"></div>
+        <div class="in_middle">
+            <!--首页四个按钮 开始-->
+            <ul class="in_mi_buttom">
+                <li class="in_mi_bu_li">
+                    <a href="/index.php/Home/Examination/index/cid/479.html">
+                        <p class="in_mi_bu_li_p">在线测试</p>
+                        <img src="/images/index_14.png"/>
+                    </a>
+                </li>
+                <li class="in_mi_bu_li">
+                    <a href="/index.php/Home/Members/index/cid/478.html">
+                        <p class="in_mi_bu_li_p">学员中心</p>
+                        <img src="/images/index_16.png"/>
+                    </a>
+                </li>
+                <li class="in_mi_bu_li">
+                    <a href="/index.php/Home/Members/index/cid/478/mp/texc.html">
+                        <p class="in_mi_bu_li_p">测试记录</p>
+                        <img src="/images/index_19.png"/>
+                    </a>
+                </li>
+                <li class="in_mi_bu_li">
+                    <a href="/index.php/Home/Members/index/cid/478.html">
+                        <p class="in_mi_bu_li_p">积分记录</p>
+                        <img src="/images/index_21.png"/>
+                    </a>
+                </li>
+            </ul>
+            <!--首页四个按钮 结束-->
+            
+            
+            <!----------从严治党 开始--------->
+            <div class="in_party">
+                <div class="in_title">
+                    <img class="in_ti_img" src="/images/index_11.png"/>
+                    <div class="in_ti_word">
+                        <p class="in_ti_wo_p">{$introduczddde.name}</p>
+                        <span class="in_ti_wo_span">{$introduczddde.enname}</span>
+                    </div>
+                </div>
+                
+                <div class="in_pa_content">
+                    <div class="in_pa_left">
+                        <a href="/index.php/Home/Newsshow/index/cid/{$newszddd.0.class1}/c/{$newszddd.0.class1}/id/{$newszddd.0.id}.html">
+                            <div class="in_pa_le_img" style="background: url({$newszddd.0.imgurl}) no-repeat center center;background-size: cover;">
+                            <img src="/images/in_te.png"/>
+                            </div>
+                            <div class="in_pa_le_word">
+                                <p class="in_pa_wo_le_title">{$newszddd.0.title}</p>
+								<?php
+									$newszdddsss=explode(' ',$newszddd['0']['updatetime']);
+									$newszddd['updatetime']=$newszdddsss['0'];
+								?>
+                                <p class="in_pa_wo_le_deat">{$newszddd.updatetime}</p>
+                                <span class="in_pa_wo_le_span">{$newszddd.0.description}</span>
+                            </div>
+                            <div class="in_pa_le_more">MORE</div>
+                        </a>
+                    </div>
+                    
+                    <div class="in_pa_right">
+                        <div class="in_pa_ri_each">
+                            <a href="/index.php/Home/Newsshow/index/cid/{$newszddd.1.class1}/c/{$newszddd.1.class1}/id/{$newszddd.1.id}.html">
+                                <div class="in_pa_ri_img" style="background: url({$newszddd.1.imgurl}) no-repeat center center; background-size: cover"></div>
+                                <div class="in_pa_ri_word">
+                                    <p class="in_pa_ri_wo_title">{$newszddd.1.title}</p>
+                                    <span class="in_pa_ri_wo_span">{$newszddd.1.description}</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="in_pa_ri_each">
+                            <a href="/index.php/Home/Newsshow/index/cid/{$newszddd.2.class1}/c/{$newszddd.2.class1}/id/{$newszddd.2.id}.html">
+                                <div class="in_pa_ri_img" style="background: url({$newszddd.2.imgurl}) no-repeat center center; background-size: cover"></div>
+                                <div class="in_pa_ri_word">
+                                    <p class="in_pa_ri_wo_title">{$newszddd.2.title}</p>
+                                    <span class="in_pa_ri_wo_span">{$newszddd.2.description}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------从严治党 结束--------->
+            
+            
+            <!-----税收资料 开始------>
+            <div class="index_sszl clearfix">
+                <div class="in_title">
+                    <img class="in_ti_img" src="/images/index_11.png"/>
+                    <div class="in_ti_word">
+                        <p class="in_ti_wo_p">{$introduczdddessss.name}</p>
+                        <span class="in_ti_wo_span">{$introduczdddessss.enname}</span>
+                    </div>
+                </div>
+                
+                <div class="ss_line">
+                    <div class="ss_li_x"></div>
+                    <div class="ss_li_x"></div>
+                </div>
+                <div class="more" style="float:right;color:#cb252e;">
+                    <a href="/index.php/Home/Tax/index/cid/477.html">
+                        <p>更多>></p>
+                    </a>
+                </div>
+
+                <div style="clear:both;overflow:hidden;">
+                </div>
+                <div class="sszl_list clearfix">
+                    <ul>
+                        <li class="on">
+                            <a href="/index.php/Home/Newsshow/index/cid/{$newszdddssss.0.class1}/c/{$newszdddssss.0.class1}/id/{$newszdddssss.0.id}.html">
+                                <div class="ss_img" style="background: url({$newszdddssss.0.imgurl}) no-repeat center center; background-size: cover;"></div>
+                                <p>{$newszdddssss.0.title}</p>
+                            </a>
+                        </li>
+                        <li class="on">
+                            <a href="/index.php/Home/Newsshow/index/cid/{$newszdddssss.1.class1}/c/{$newszdddssss.1.class1}/id/{$newszdddssss.1.id}.html">
+                                <div class="ss_img" style="background: url({$newszdddssss.1.imgurl}) no-repeat center center; background-size: cover;"></div>
+                                <p>{$newszdddssss.1.title}</p>
+                            </a>
+                        </li>
+                        <li class="on">
+                            <a href="/index.php/Home/Newsshow/index/cid/{$newszdddssss.2.class1}/c/{$newszdddssss.2.class1}/id/{$newszdddssss.2.id}.html">
+                                <div class="ss_img" style="background: url({$newszdddssss.2.imgurl}) no-repeat center center; background-size: cover;"></div>
+                                <p>{$newszdddssss.2.title}</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="sszl_bigimg">
+                    <img src="{$config_info.gz_essyyzmdh}">
+                </div>
+            </div>
+<!-----税收资料 结束------>
+            
+            <!-----政策法规 开始------>
+            <div class="index_zcfg_bg">
+                <div class="index_zcfg clearfix">
+                    <div class="in_title">
+                        <img class="in_ti_img" src="/images/index_11.png"/>
+                        <div class="in_ti_word">
+                            <p class="in_ti_wo_p">{$introduffggssss.name}</p>
+                            <span class="in_ti_wo_span">{$introduffggssss.enname}</span>
+                        </div>
+                    </div>
+					<foreach name="newffggdssss" item="r" key="k" >
+                    <?php 
+						if(!$k){
+					?>
+                    <div class="first">
+                        <a href="/index.php/Home/Newsshow/index/cid/{$r.class2}/c/{$r.class1}/id/{$r.id}.html">
+							<div class="fi_img" style="background: url({$r.imgurl}) no-repeat center center; background-size: cover;"></div>
+							<div class="news_list">
+								<p class="news_title">
+									<span class="in_ne_j"></span>{$r.title}
+								</p>
+								<p class="news_introu">
+									{$r.description}
+								</p>
+							</div>
+                       		<img src="/images/index_1111.png"/>
+                        </a>
+                    </div>
+					<?php
+						}else{
+						if($k==1 && count($newffggdssss)>1){
+							echo '<div class="jsfhs">';
+						}
+					?>
+                    
+                        <div class="second">
+                            <div class="news_list">
+                                <a href="/index.php/Home/Newsshow/index/cid/{$r.class2}/c/{$r.class1}/id/{$r.id}.html">
+                                    <p class="news_title">
+                                        {$r.title}
+                                    </p>
+                                    <div class="in_ne_moer">MORE</div>
+                                </a>
+                            </div>
+                        </div>
+
+<?php  }?>
+                    
+                    </foreach>
+					<?php if(count($newffggdssss)>1) echo '</div>';?>
+                </div>
+            </div>
+<!-----政策法规 结束------> 
+            
+        </div>
+        <div class="bu_back" style="background: url({$config_info.gz_essyyzddmdh}) no-repeat center center;"></div>
+    </div>
+    
+    
+    
+   <!-----------------------------------底部 开始---------------------------------->
+    <div class="bottom">
+        
+        <div class="bo_line"></div>
+        <div class="bo_middle">
+            <img src="/images/bu.png"/>
+            <div class="bo_ri">
+                <div class="bo_nav">
+                    <p class="bu_na"><a href="/index.php/Home/Index/home.html">首页</a><span class="bu_na_line"></span></p>
+                    <p class="bu_na"><a href="/index.php/Home/Members/index/cid/478.html">学员中心</a><span class="bu_na_line"></span></p>
+                    <p class="bu_na"><a href="/index.php/Home/Examination/index/cid/479.html">在线测试</a><span class="bu_na_line"></span></p>
+                </div>
+                <p class="bo_na">{$config_info.gz_footright}</p>
+                <p class="bo_na">技术支持：<a href="http://www.resonance.com.cn" target="_blank" class="buna_span">广西共振广告</a></p>
+            </div>
+        </div>
+        <div class="bo_line1"></div>
+    </div>
+    
+   <!-----------------------------------底部 结束---------------------------------->
+    
+    
+    
+    
+
+<script>  /*异步加载 - 在线交流 - 站长统计 */
+  var gz_weburl='/';
+  var lang='cn';
+  var classnow='{$cid}';
+  var id='<?php echo $_GET['id'];?>';
+  
+  var url=gz_weburl+'include/interface/uidata.php?lang='+lang,h = '<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>';
+  
+  if(h.indexOf("preview=1")!=-1)url = url + '&theme_preview=1';
+  $.ajax({
+    type: "POST",
+    url: url,
+    dataType:"json",
+    success: function(msg){
+      var c = msg.config;
+      
+      if(c.gz_stat==1){       //站长统计
+        var navurl=classnow==10001?'':'../';
+        var stat_d=classnow+'-'+id+'-'+lang;
+        var url = gz_weburl+'include/stat/stat.php?type=para&u='+navurl+'&d='+stat_d;
+        $.getScript(url);
+      }
+    }
+  });
+    //var metClicks = $(".metClicks");//点击次数
+    var ClicksListnow='<?php echo $_GET['id'];?>';
+    var weburl='/';
+    if(ClicksListnow){
+      //var DataClicks = metClicks.data("metclicks");
+      //ClicksStr=DataClicks.split("|"); 
+      var ClicksModule = 'news';//ClicksStr[0],ClicksListnow = ClicksStr[1];
+      var urlw = weburl+'include/hits.php?type='+ClicksModule+'&id='+ClicksListnow;
+      $.ajax({
+        type: "POST",
+        url: urlw,
+        dataType:"text",
+        success: function(msg){
+          //var t = msg.split('"');
+          //metClicks.html(t[1]);
+        }
+      });
+    }
+</script>
+
+
+</body>
+</html>

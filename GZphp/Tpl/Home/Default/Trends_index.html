@@ -1,0 +1,103 @@
+<style>.pa_back{height:393px;}/*政策法规底部图片*/</style>
+ <!-------------------------------------------内容 开始--------------------------------------------->    
+    <div class="statute">
+       <div class="in_roof"></div>
+       
+       <!---->
+       <div class="st_middle">
+       	<!--当前位置 开始-->
+       		<ul class="position">
+       			<li class="po_li"><a href="/index.php/Home/Index/home.html">首页</a><span class="po_li_span">></span></li>
+       			<li class="po_dq  po_li"><a href="/index.php/Home/{$getinfolamu.foldername}/index/cid/{$getinfolamu.id}.html">{$getinfolamu.name}</a><span class="po_li_span">></span></li>
+       			<img src="/images/pa_09.png"/>
+       		</ul>
+       		<img class="po_line" src="/images/position_line_03.png"/>
+       	<!--当前位置 结束-->
+       	
+       	<!--title 开始-->
+       	<div class="inside">
+       		<img class="ins_img" src="/images/pa_13.png"/>
+       		<div class="ins_word">
+       			<p class="ins_wo_p">{$getinfolamu.name}</p>
+       			<div class="ins_wo_line"></div>
+       		</div>
+       	</div>
+       	<!--title 结束-->
+       	
+       	<!--二级导航 开始-->
+           <div class="st_nav">
+              
+			   
+			   
+			   
+<foreach name="lanmu" item="r" key="k" >
+					<div class="st_na_lisi <?php
+        if($r['id']==$cid) echo 'st_na_dq';
+
+      ?>">
+					<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}</a><img src="/images/st11111_03.png"/>
+					
+					</div>
+				  </foreach>
+			   
+			   
+			   
+               <div class="st_na_background" style="width: 228px; height: 135px; background: url(/images/statute_05.png) no-repeat; background-position: bottom left; background-size: cover;position: absolute; bottom: -40px; right: -100px"></div>
+           </div>
+       	<!--二级导航 结束-->
+           
+           
+           <!------------列表 开始------------->
+           <div class="st_list">
+               <div class="st_li_title">{$lan.name}<span class="st_li_title_span">{$lan.enname}</span></div><?php
+			if(empty($list)) echo '<p style="padding: 18px;color: #666;">暂无数据</p>';
+		   ?><foreach name="list" item="r" key="k" ><?php
+	$nnnttimm=explode(' ',$r['updatetime']);
+?>
+               <div class="st_li_each">
+                   <a href="/index.php/Home/Newsshow/index/cid/{$cid}/c/140/id/{$r.id}.html">
+                       <span class="st_li_ea_spot"></span>
+                       <p class="st_li_ea_title">{$r.title}</p>
+                       <p class="st_li_ea_browse">浏览次数：{$r.hits}</p>
+                   </a>
+               </div>
+               
+               </foreach>
+               
+               <!--页码 开始-->
+                <div class="page" id="paga"></div>
+       	    <!--页码 结束-->
+           </div>
+           <!------------列表 结束------------->
+       	
+       	
+       	
+       	
+       		
+       	
+       </div>
+       <!---->
+       
+        <div class="pa_back" style="background: url({$config_info.gz_ewmdzzfgttt}) no-repeat center center;"></div>
+    </div>
+    
+ <!-------------------------------------------内容 结束--------------------------------------------->   
+    <script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paga',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$lan.foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});
+
+
+
+</script>

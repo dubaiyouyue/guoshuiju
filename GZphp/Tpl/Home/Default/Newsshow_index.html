@@ -1,0 +1,56 @@
+<?php
+	$nwetimtwww=explode(' ',$list['updatetime']);
+	$list['updatetime']=$nwetimtwww['0'];
+ ?>
+ <!-------------------------------------------内容 开始--------------------------------------------->    
+    <div class="dutails">
+       <div class="in_roof"></div>
+       
+       <!---->
+       <div class="du_middle" style="z-index: 50;position: relative">
+       	<!--当前位置 开始-->
+       		<ul class="position">
+       			<li class="po_li"><a href="/index.php/Home/Index/home.html">首页</a><span class="po_li_span">></span></li>
+       			<li class="po_dq  po_li"><a href="/index.php/Home/{$getinfolamu.foldername}/index/cid/{$getinfolamu.id}.html">{$getinfolamu.name}</a><span class="po_li_span">></span></li>
+       			<img src="/images/pa_09.png"/>
+       		</ul>
+       		<img class="po_line" src="/images/position_line_03.png"/>
+       	<!--当前位置 结束-->
+       	
+       	<style>
+            .dutails{width: 100%; background: url(/images/pa22222.png) repeat;position: relative;}
+            .du_middle{width: 1200px; margin: auto;padding-bottom:158px;}
+            .du{padding-bottom: 60px;}
+            .du_title{font-size:16px;font-weight: bold;text-align: center;}
+            .du_line{width: 100%;border-bottom: 1px dashed #C8C8C8; margin-top: 20px;}
+            .du_date{font-size: 14px; color: #878686;text-align: center;margin-top: 20px; margin-bottom: 40px;}
+			.du p{display:block;}.du img{display: inline-block;}
+        </style>
+       	<div class="du">
+		
+<style>
+                .return{position: absolute;top:-0px;}
+                .jt{font-size:30px;color: #BFBEBE;display:inline-block;vertical-align: top; margin-top:-9px;}
+                .return a{font-size: 16px; color: #3B3B3B;display: inline-block;vertical-align: top;}
+                .return:hover a{color: #D41A28}
+                .return:hover a .jt{color: #D41A28}
+            </style>
+            <div class="return"><a href="javascript:history.go(-1);"><span class="jt">﹤</span>返回</a></div>
+		
+		
+            <p class="du_title">{$list.title}</p>  
+            <div class="du_line"></div>
+            <div class="du_date">{$list.updatetime}</div>
+            <p>{$list.content}</p>
+        </div>
+       	
+       		
+       	
+       </div>
+       <!---->
+       
+        <div class="te_back" style="background: url({$config_info.gz_ewmdsxxqhddbbttt}) no-repeat center center;"></div>
+    </div>
+    
+ <!-------------------------------------------内容 结束--------------------------------------------->   
+    
